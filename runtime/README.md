@@ -1,3 +1,9 @@
+# Attention
+
+This is not an official Expo package. It was published to update the Snack Runtime in PlayTorch to be compatible with Expo SDK 47.
+
+Official repo: https://github.com/expo/snack/tree/main/runtime
+
 # Snack Runtime
 
 The Snack runtime is an Expo App that loads and runs the Snack code from https://snack.expo.dev or from any other app using the [snack-sdk](../packages/snack-sdk). The Snack runtime exists in two flavours:
@@ -28,7 +34,7 @@ This loads the runtime into Expo Go and displays another QR-code scanner. Now, u
 
 ## Deployment
 
-The runtime is auto-deployed to Staging upon mergin to main. 
+The runtime is auto-deployed to Staging upon mergin to main.
 To deploy to production, run the `deploy` dispatch trigger of the `RuntimeProduction` Github Action workflow.
 
 To manually deploy or learn more about deploying, see the [Deployment guide](./__internal__/DEPLOYING.md).

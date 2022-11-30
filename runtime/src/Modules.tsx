@@ -15,13 +15,13 @@ import path from 'path';
 import React from 'react';
 import { Platform, PixelRatio } from 'react-native';
 import * as GestureHandler from 'react-native-gesture-handler';
-// @ts-ignore: Could not find a declaration file for module 'react-native-reanimated/plugin'
-import Reanimated2Plugin from 'react-native-reanimated/plugin-standalone';
 import * as babel from 'snack-babel-standalone';
 // Highest supported version of source-map is 0.6.1. As of 7.x source-map uses
 // web-assembly which is not yet supported on react-native.
 import { SourceMapConsumer, RawSourceMap } from 'source-map';
 
+// @ts-ignore: Could not find a declaration file for module 'react-native-reanimated/plugin'
+import Reanimated2Plugin from '../vendor/reactNativeReanimatedPlugin';
 import System from '../vendor/system.src';
 import * as Files from './Files';
 import * as Logger from './Logger';
@@ -66,13 +66,6 @@ Asset; // eslint-disable-line no-unused-expressions,@typescript-eslint/no-unused
 // Load react-native-gesture-handler, so RCTView's directEventTypes are set before bridge is fully initialized.
 // See https://github.com/kmagiera/react-native-gesture-handler/blob/master/GestureHandler.js#L46
 GestureHandler; // eslint-disable-line no-unused-expressions,@typescript-eslint/no-unused-vars
-
-// Set the `__DEV__` variable to `false` because we are running a context without Metro.
-// Unfortunately, this is handled by the bundler such as Metro or Webpack.
-// That's not available inside the Snack Runtime itself.
-// see: https://twitter.com/jamonholmgren/status/1561798978269618177
-// @ts-expect-error
-global['__DEV__'] = false;
 
 // Maintain project-level dependency state in the `ExpoDependencyV2` format.
 // See https://github.com/expo/universe/blob/64a2eab474d11614c5b403f09747fdb112769a39/libraries/snack-sdk/src/types.js#L114-L126.
